@@ -28,6 +28,7 @@ public class TorpedoStore {
     }
   }
 
+  // shared by every call of fire, so a new Random is not created each time (SonarQube java:S2119)
   private final Random generator = new Random();
 
   public boolean fire(int numberOfTorpedos){
